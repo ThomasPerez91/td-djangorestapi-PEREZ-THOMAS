@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Researchers List</h1>
+<ul>
+    {% for researcher in researchers %}
+    <li>
+        <a href="{% url 'researcher_detail' researcher.pk %}">{{ researcher.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'researcher_create' %}">Add a new researcher</a>
+{% endblock %}

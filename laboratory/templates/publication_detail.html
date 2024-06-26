@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Publication : {{ publication.title }}</h1>
+<p><strong>Abstract :</strong> {{ publication.abstract }}</p>
+<p><strong>From Project :</strong> <a href="{% url 'project_detail' publication.project.pk %}">{{
+        publication.project.title }}</a></p>
+<p><strong>Publication Date :</strong> {{ publication.publication_date }}</p>
+{% endblock %}

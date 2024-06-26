@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search Results - Research Center
+{% endblock %}
+
+{% block content %}
+<div class="search-results">
+    <h2>Search Results</h2>
+
+    {% if researchers %}
+    <div class="category">
+        <h3>Researchers</h3>
+        {% for researcher in researchers %}
+        <div class="item">
+            <h3>{{ researcher.name }}</h3>
+            <p><strong>Specialty:</strong> {{ researcher.specialty }}</p>
+        </div>
+        {% empty %}
+        <p>No researchers found.</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if projects %}
+    <div class="category">
+        <h3>Projects</h3>
+        {% for project in projects %}
+        <div class="item">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+        </div>
+        {% empty %}
+        <p>No projects found.</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if publications %}
+    <div class="category">
+        <h3>Publications</h3>
+        {% for publication in publications %}
+        <div class="item">
+            <h3>{{ publication.title }}</h3>
+            <p>{{ publication.resume }}</p>
+        </div>
+        {% empty %}
+        <p>No publications found.</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if not researchers|length and not projects|length and not publications|length %}
+    <p>No results found matching your query.</p>
+    {% endif %}
+</div>
+{% endblock %}
