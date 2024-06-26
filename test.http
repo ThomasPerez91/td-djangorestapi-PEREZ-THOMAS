@@ -1,0 +1,108 @@
+### Get CSRF token
+GET http://127.0.0.1:8000/
+
+### Signup
+POST http://127.0.0.1:8000/signup/
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "password1": "password123",
+    "password2": "password123"
+}
+
+### Login
+POST http://127.0.0.1:8000/
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "password": "password123"
+}
+
+### Logout
+POST http://127.0.0.1:8000/logout/
+
+### Get all researchers
+GET http://127.0.0.1:8000/researchers/
+
+### Get a single researcher by id
+GET http://127.0.0.1:8000/researcher/1/
+
+### Create a new researcher
+POST http://127.0.0.1:8000/researcher/new/
+Content-Type: application/json
+
+{
+    "nom": "Doe",
+    "specialite": "Physics"
+}
+
+### Update a researcher by id
+PUT http://127.0.0.1:8000/researcher/1/edit/
+Content-Type: application/json
+
+{
+    "nom": "John Doe",
+    "specialite": "Quantum Physics"
+}
+
+### Delete a researcher by id
+DELETE http://127.0.0.1:8000/researcher/1/delete/
+
+### Get all publications
+GET http://127.0.0.1:8000/publications/
+
+### Get a single publication by id
+GET http://127.0.0.1:8000/publication/1/
+
+### Create a new publication
+POST http://127.0.0.1:8000/publication/new/
+Content-Type: application/json
+
+{
+    "titre": "New Research",
+    "resume": "A summary of new research."
+}
+
+### Update a publication by id
+PUT http://127.0.0.1:8000/publication/1/edit/
+Content-Type: application/json
+
+{
+    "titre": "Updated Research",
+    "resume": "An updated summary of the research."
+}
+
+### Delete a publication by id
+DELETE http://127.0.0.1:8000/publication/1/delete/
+
+### Get all projects
+GET http://127.0.0.1:8000/projects/
+
+### Get a single project by id
+GET http://127.0.0.1:8000/project/1/
+
+### Create a new project
+POST http://127.0.0.1:8000/project/new/
+Content-Type: application/json
+
+{
+    "titre": "New Project",
+    "description": "A description of the new project."
+}
+
+### Update a project by id
+PUT http://127.0.0.1:8000/project/1/edit/
+Content-Type: application/json
+
+{
+    "titre": "Updated Project",
+    "description": "An updated description of the project."
+}
+
+### Delete a project by id
+DELETE http://127.0.0.1:8000/project/1/delete/
+
+### Search for researchers, projects, and publications
+GET http://127.0.0.1:8000/search/?q=test
